@@ -1,0 +1,21 @@
+0;01-00;init
+1;01-01;Conversar com Thiago, o dono do bar
+1;01-02;Pedir algo?
+1;01-03;Caipirinha de kiwi
+2;01-04;51
+3;01-05;voltar
+2;01-06;Perguntar sobre o relógio
+1;01-07;Você sabe algo sobre um relógio que foi roubado?
+1;01-08;Sim
+2;01-09;Não
+3;01-10;Voltar
+2;01-11;Conversar com Bigas, o bebum
+0;02-00;init
+1;02-01;Com licença, tenho algumas perguntas
+2;02-02;Voltar
+0;03-00;init
+1;03-01;Vá pagar o que você deve ao thiago
+2;03-02;Fala bigas, eu te pago uma rodada e depois tu vai pra casa, pode ser?
+0;04-00;init
+1;04-01;Sim
+2;04-02;Não(Você vai embora sem olhar para tras)

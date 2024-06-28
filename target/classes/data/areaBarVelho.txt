@@ -1,0 +1,103 @@
+header {
+  area = bar;
+  bPlayerIn = false;
+}
+
+formato: travel(area, section)
+formato: talk(section, option) ou 
+talk(section, option, section, option)
+formato: addInventory(item)
+
+content {
+  section(1): Bar
+    option(0): init
+    [Ábacus se dirige ao bar onde encontra Bigas, o bebum, e Thiago, o dono do bar, com quem deseja conversar?]
+
+    {1 - Conversar com Thiago, o dono do bar
+    2 - Conversar com Bigas, o bebum}
+  @
+    option(1): Conversar com Thiago, o dono do bar
+      [Você se dirige ao balcão onde se encontra com o dono do bar]
+      [Thiago: Boa noite, o senhor deseja alguma bebida?]
+      
+      {1 - Pedir algo?
+      1.1 - Caipirinha de kiwi
+      1.2 - 51
+      1.3 - Voltar
+      2 - Perguntar sobre o relógio
+      3 - Voltar}
+      % talk(1, 1)
+@
+      option(1): Pedir algo?
+      @
+        option(1): Caipirinha de kiwi
+          addInventory(caipírinha)
+          talk(1, 1)
+       @
+        option(2): 51
+          addInventory(cinco1)
+          talk(1, 1)
+        @
+        option(3): Voltar
+          talk(1, 1)
+@
+      option(2): Perguntar sobre o relógio
+        {1 - Você sabe algo sobre um relógio que foi roubado?}
+@
+        option(1): Você sabe algo sobre um relógio que foi roubado?
+          [Thiago: Talvez eu saiba mas você terá de fazer uma tarefa para mim, quer mesmo assim?]
+          {1 - sim
+          2 - não}
+@
+          option(1): Sim
+            [Thiago: Então fale com o Bigas o bebum e peça a ele para que ele me pague e saia do meu bar fechado?]
+            talk(1, 2)
+            @
+          option(2): Não
+            [Thiago: Então, não há nada que posso fazer.]
+            talk(1, 1)
+      @
+      option(3): Voltar
+        talk(1, 0)
+@
+    option(2): Conversar com Bigas, o bebum
+      section(1): Bar - Conversar com Bigas direto
+        [Em uma das mesas no canto, Bigas está reclinado. Na mesa, há um copo pequeno e vazio]
+        {1 - Com licença, tenho algumas perguntas.}
+        {2 - Voltar.}
+@
+          option(1): Com licença, tenho algumas perguntas.
+            [Bigas: ughh.. vai perguntar pra sua mãe.]
+            talk(1, 2, 1, 0)
+            @
+          option(2): Voltar
+            talk(1, 0)
+
+      section(2): Bar - Conversar com Bigas depois
+        [Em uma das mesas no canto, Bigas está reclinado. Na mesa, há um copo pequeno e vazio]
+        [Bigas: ughh.. o que tu quer comigo? Seu peba]
+        {1 - Vá pagar o que você deve ao thiago
+        2 - Fala bigas eu te pago uma rodada e depois tu vai pra casa, pode ser?}
+  @
+          option(1): Vá pagar o que você deve ao thiago
+            [Bigas: quem tu pensa que é? pra tentar me obrigar a fazer algo]
+            talk(1, 2, 2)
+            @
+          option(2): Fala bigas eu te pago uma rodada e depois tu vai pra casa, pode ser?
+            [Bigas: se é você que vai pagar eu to dentro]
+            [Bigas toma a cerveja que você pagou, acerta as contas com thiago e vai para casa]
+            talk(2, 0)
+@
+  section(2): Bar - pós pagar as contas de Bigas
+    option(0): init
+      [Ábacus: então Thiago o que você sabe sobre o relógio?]
+      [Thiago: fiquei sabendo de um relogio que tentaram vender para a Juliana, fale com ela para mais detalhes, mas não sei se será facil conseguir as informações]
+      [Ábacus: obrigado Thiago, nos vemos mais tarde]
+
+      [Ao sair do Bar você Ábacus se depara com Bitelo deitado no canto da calçada pedindo esmola]
+      travel(Praca, 1)
+  @
+  option(1): teste    
+}
+  
+  

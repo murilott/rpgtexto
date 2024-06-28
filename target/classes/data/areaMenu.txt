@@ -1,0 +1,39 @@
+header {
+  area = menu;
+  bPlayerIn = true;
+  
+}
+
+content {
+s01: Menu
+o00: init
+{1 - Jogar;2 - Sair;3 - Ajuda;4 - Voltar}
+@
+o01: Jogar
+talk(02,00)
+@
+o02: Sair
+[Para sair, feche a aba.]
+talk(01,00)
+@
+o03: Ajuda
+[Para jogar, basta digitar a opção escolhida e dar enter. É expressamente proibido digitar outra coisa que não esteja nas opções listadas disponíveis. Caso isto ocorra, consequências imprevistas podem ocorrer.]
+[Este é um jogo desenvolvido por Murilo, Guilherme e com eventuais colaborações do Jordão para a aula de POO.]
+talk(01,00)
+@
+o04: Voltar
+[Você não pode voltar, está no menu!]
+talk(01,00)
+@
+s02: Iniciar jogo
+o00: init
+[Você é um detetive de renome na europa do seculo XV. Em um dia você é contratado por um jovem que teve seu relogio, o qual herdou de seu pai, roubado, então você está encarregado de apenas encontrar o ladrão que o roubou (deve buscar, por  meio de pistas na cidade, o culpado)]
+[Ábacus, o detetive, está na Praça de Brilhantia, observando o movimento]
+[(O relógio roubado deve ter valor sentimental para o jovem que me contratou. Tenho que começar a investigação e descobrir quem foi o responsável por esse roubo.)]
+travel(Praça,01,00)
+@
+s03: Fim de jogo
+o00: init
+[Na mesma praça onde inicou sua investigação, Ábacus saboreia uma breja sob os olhares do amanhecer. Mais um caso se encerrou, e este pesará forte no seu currículo. Apesar das novas mudanças e dificuldades adventas do escritório, muitas investigações e causos virão, e ele sabe que tem um dever a cumprir com a cidade.]
+exit
+@

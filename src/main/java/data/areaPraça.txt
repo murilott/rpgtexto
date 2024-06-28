@@ -1,0 +1,32 @@
+header {
+  area = boca;
+  bPlayerIn = false;
+}
+
+content {
+s01: Praça
+o00: init
+[Você está em uma das praças de Brilhantia e repara em alguns locais que podem ajudar na investigação: nas imediações há um bar com uma bela vista do castelo. Outro dos caminhos leva a bibliteca comunitária]
+[Para onde você quer ir?]
+{1 - Bar;2 - Boca}
+@
+o01: Bar
+travel(Bar,01,00)
+@
+o02: Boca
+travel(Boca,01,00)
+@
+s02: Praça - pós bar
+o00: init
+[Você está em uma das praças de Brilhantia e repara em alguns locais que podem ajudar na investigação: nas imediações há um bar com uma bela vista do castelo. Outro dos caminhos leva a bibliteca comunitária]
+[Para onde você quer ir?]
+{1 - bar;2 - boca}
+@
+o01: bar
+[(Acredito que no bar ninguém tenha alguma ideia da carta.)]
+talk(02,00)
+@
+o02: boca
+travel(Boca,02,00)
+@
+}

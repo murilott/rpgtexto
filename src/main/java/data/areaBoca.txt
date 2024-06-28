@@ -1,0 +1,32 @@
+header {
+  area = boca;
+  bPlayerIn = false;
+}
+
+content {
+s01: Boca
+o00: init
+[Você se dirige a boca onde encontra alguns drogados. A dona não se encontra a vista, e perguntando para alguns ela saiu há algum tempo.]
+[(É melhor voltar outra hora aqui.)]
+travel(Praça,01,00)
+@
+s02: Boca - pós bar
+o00: init
+[Você se dirige a boca onde encontra alguns drogados por lá e de algum jeito você se encontra com Juliana, a dona da Boca, e começa a conversar com ela]
+[Ábacus: Thiago, o dono do bar, me disse que você sabe de algo sobre algum relógio?]
+[Juliana: Talvez eu saiba de algo, mas você terá que me ajudar antes. Venha comigo encontrar alguem, você sera o meu guarda costas.]
+[Então Àbacus contata Jordão sobre o que esta acontecendo e uma armadilha é preparada]
+[Passa um tempo e vocês se encontram com um cara num beco da na praça da cidade]
+[Estranho: você nao sabe ler, a carta dizia para vir sozinha]
+[Juliana: eu não ando sem proteção]
+[Estranho: então tá, este é o relógio que mencionei]
+[Das sombras aparece Jordão e seus guardas encurralando o bandido] 
+[Àbacus se aproxima do bandido ja algemado]
+[Ábacus: BIGAS!!! por que fez isso?]
+[Bigas: ja falei com você no bar
+Preciso de dinheiro pra continuar com minha bebedeira]
+[Jordão sem mais nem menos pede para os guardas levarem Bigas para a prisão ]
+[Jordão: muito obrigado Àbacus por achar o bandido que me roubou, aqui está como prometido o título de detetive oficial de Brilhantina e 10 mil euros para começar seu escritório]
+travel(Menu,03,00)
+@
+}

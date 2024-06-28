@@ -1,0 +1,18 @@
+{
+  "files": {
+    "src/main/java/entities/FileRead.java": [
+      {
+        "id": "8441e14a-e52f-4ee8-b1b7-d16f7293b7e0",
+        "line": 124,
+        "version": 7411,
+        "index": 3423
+      },
+      {
+        "id": "7de34fe2-82c1-46e0-869a-c0f3c99cca0d",
+        "line": 187,
+        "version": 7411,
+        "index": 5195
+      }
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+header {
+  area = bar;
+  bPlayerIn = false;
+}
+
+
+content {
+s01: Bar
+o00: init
+[Ábacus se dirige ao bar onde encontra Bigas, o bebum, e Thiago, o dono do bar. Com quem deseja conversar?]
+{1 - Conversar com Thiago, o dono do bar;2 - Conversar com Bigas, o bebum}
+@
+o01: Conversar com Thiago, o dono do bar
+[Você se dirige ao balcão onde se encontra com o dono do bar]
+[Thiago: Boa noite, o senhor deseja alguma bebida?]
+{1 - Pedir algo?;2 - Perguntar sobre o relógio;3 - Voltar}
+@
+o02: Pedir algo?
+{1 - Caipirinha de kiwi;2 - 51;3 - voltar}
+@
+o03: Caipirinha de kiwi
+[(Melhor não beber, estou em trabalho. Além disso, tô mais duro que cabeça de prego.)]
+[(Só aceitei procurar o relógio daquele mimado por causa disso.)]
+addInventory(caipírinha)
+talk(01,01)
+@
+o04: 51
+[(Melhor não beber, estou em trabalho. Além disso, tô mais duro que cabeça de prego.)]
+[(Só aceitei procurar o relógio daquele mimado por causa disso.)]
+addInventory(cinco1)
+talk(01,01)
+@
+o05: voltar
+talk(01,01)
+@
+o06: Perguntar sobre o relógio
+{1 - Você sabe algo sobre um relógio que foi roubado?}
+@
+o07: Você sabe algo sobre um relógio que foi roubado?
+[Thiago: Talvez eu saiba, mas você terá de fazer uma tarefa para mim, quer mesmo assim?]
+{1 - Sim;2 - Não}
+@
+o08: Sim
+[Thiago: Então fale com Bigas, o bebum, e peça para que ele me pague e saia do meu bar, fechado?]
+talk(03,00)
+@
+o09: Não
+[Thiago: Então, não há nada que posso fazer.]
+talk(01,01)
+@
+o10: Voltar
+talk(01,00)
+@
+o11: Conversar com Bigas, o bebum
+talk(02,00)
+@
+s02: Bar - Conversar com Bigas direto
+o00: init
+[Em uma das mesas no canto, Bigas está reclinado. Sobre a superfície rugosa de madeira, há um copo pequeno e vazio]
+{1 - Com licença, tenho algumas perguntas;2 - Voltar}
+@
+o01: Com licença, tenho algumas perguntas
+[Bigas: ughh.. vai perguntar pra sua mãe.]
+talk(02,00)
+@
+o02: Voltar
+talk(01,00)
+@
+s03: Bar - Conversar com Bigas depois
+o00: init
+[Em uma das mesas no canto, Bigas está reclinado. Sobre a superfície rugosa de madeira, há um copo pequeno e vazio]
+[Bigas: ughh.. o que tu quer comigo? Seu peba]
+{1 - Vá pagar o que você deve ao thiago;2 - Fala bigas, eu te pago uma rodada e depois tu vai pra casa, pode ser?}
+@
+o01: Vá pagar o que você deve ao thiago
+[Bigas: quem tu pensa que é? pra tentar me obrigar a fazer algo]
+talk(03,00)
+@
+o02: Fala bigas, eu te pago uma rodada e depois tu vai pra casa, pode ser?
+[Bigas: se é você que vai pagar eu tô dentro.]
+[Bigas toma a cerveja que você pagou, acerta as contas com Thiago e vai para casa]
+talk(04,00)
+@
+s04: Bar - pós pagar as contas de Bigas
+o00: init
+[Ábacus: então Thiago, o que você sabe sobre o relógio?]
+[Thiago: fiquei sabendo de um relogio que tentaram vender para a Juliana, fale com ela para mais detalhes, mas não sei se será facil conseguir as informações]
+[Ábacus: obrigado Thiago, nos vemos mais tarde]
+[Ao sair do Bar você se depara com Bitelo deitado no canto da calçada, pedindo esmola]
+{1 - Sim;2 - Não(Você vai embora sem olhar para tras)}
+@
+o01: Sim
+[Bitelo te entrega uma carta que encontrou no chão]
+[Se você está lendo esta carta, é porque tem interesse no relógio que recentemente caiu em minhas mãos. Deixe-me dizer que este não é um item comum. É uma peça de arte, uma raridade que certamente atrairá a atenção dos colecionadores mais refinados. Não posso revelar como o obtive, mas posso assegurar-lhe que está em perfeitas condições e pronto para mudar de mãos por um preço que reflete seu valor inestimável. Se você deseja vê-lo pessoalmente, estarei no lugar de sempre às 22h da noite. Venha sozinho e traga consigo o dinheiro necessário para concluir este negócio de forma rápida e discreta. Lembre-se, a discrição é fundamental. Este relógio tem uma história própria e precisa ser manuseado com cuidado. Estarei aguardando sua resposta.Assinado, O Intermediário]
+travel(Praça,02,00)
+@
+o02: Não(Você vai embora sem olhar para tras)
+[Caminhando mais a frente Ábacus encontra uma carta jogada no chão e decide ler]
+[Se você está lendo esta carta, é porque tem interesse no relógio que recentemente caiu em minhas mãos. Deixe-me dizer que este não é um item comum. É uma peça de arte, uma raridade que certamente atrairá a atenção dos colecionadores mais refinados. Não posso revelar como o obtive, mas posso assegurar-lhe que está em perfeitas condições e pronto para mudar de mãos por um preço que reflete seu valor inestimável. Se você deseja vê-lo pessoalmente, estarei no lugar de sempre às 22h da noite. Venha sozinho e traga consigo o dinheiro necessário para concluir este negócio de forma rápida e discreta. Lembre-se, a discrição é fundamental. Este relógio tem uma história própria e precisa ser manuseado com cuidado. Estarei aguardando sua resposta.Assinado, O Intermediário]
+travel(Praça,02,00)
+@
+}

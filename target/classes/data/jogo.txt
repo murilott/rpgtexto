@@ -1,0 +1,161 @@
+Objetos:
+
+- Character
+  Field: name: String, inventory: HashMap<String, String>, currentArea: Area
+  
+- Player <- Character
+  Field: 
+  
+- NPC <- Character
+  Field: job: String
+  
+- Area: 
+  Field: name: String. itemList: ArrayList<Item>, NPCList: ArrayList<NPC>
+
+- ItemList:
+  Field:
+  
+- Item:
+  Field: name: String, description: String
+
+- Dialogue:
+  Field: text: String, color: String, style: String, size: int
+  
+- Director:
+  Field: startTime: Date, endTime: Date, status: String, 
+
+- Provavelmente tem que fazer um objeto para carregar as áreas e lidar com as lógicas de área
+- Cada área terá um conjunto de opções (choose). Ao ir para outra área, o jogador é deslocado para ela (currentArea)
+
+
+Informações:
+NPCs: Joana a Bibliotecaria, Bigas o Bebum, Thiago dono do Bar, Juliana dona da Boca, Bitelo o Mendigo, Jordão dono do Relogio
+Areas: Mansão, Bar, Boca, Praça, Biblioteca
+Player: Ábacus o detetive
+Cidade nome: Brilhantia
+Jogo nome: The Lost Watch
+
+Você é um detetive de renome na europa do seculo XV.
+Em um dia você é contratado por um jovem que teve seu relogio, o qual herdou de seu pai, roubado, então você está encarregado de apenas encontrar o ladrão que o roubou
+(deve buscar por pistas na cidade e quem foi o mentiroso)
+
+
+Início do Jogo:
+
+[Ábacus, o detetive, está na Praça de Brilhantia, observando o movimento]
+
+Ábacus: (pensando) "O relógio roubado deve ter valor sentimental para o jovem que me contratou. Tenho que começar a investigação e descobrir quem foi o responsável por esse roubo."
+
+DECISÃO: 
+Para onde ir primeiro?
+1 - Bar,
+2 - Biblioteca,
+3 - Boca,
+4 - Mansão
+
+---------------------------
+1 - [Ábacus decide ir até mansão (esta ação levara ao final do jogo onde você terá de decidir quem é o ladrão. Deseja prosseguir?)]
+
+1 - Sim, eu desejo prosseguir
+2 - Não, preciso de mais pistas
+____
+[Jordão então reune todos da cidade e pergunta a Ábacus]
+[Quem dentre essas pessoas foi que roubou meu relógio?]
+1 - Joana a Bibliotecaria
+2 - Bigas o Bebum
+3 - Thiago dono do Bar
+4 - Juliana dona da Boca
+5 - Bitelo o Mendigo
+
+Se acertar
+[Então foi você (Nome do NPC), GUARDAS! levem-no para a prisão e interroguem-no até descobrir aonde o relógio está]
+---------------------------
+2 - [Ábacus se dirige a bar onde encontra Bigas o bebum e Thiago o dono do bar, com quem deseja conversar primeiro?]
+
+1 - Conversar com Thiago o dono do bar
+2 - Conversar com bigas o bebum
+
+1 - THIAGO
+[Você se dirige ao balcão onde se encontra com o dono do bar]
+[Thiago: Boa noite, o senhor deseja alguma bebida?]
+1 - Pedir algo?
+1.1 - Caipirinha de kiwi
+1.2 - 51
+[Àbacus bebe (nome da bebida)(volta para a opção de diálogo anterior)]
+2 - Perguntar sobre o relógio 
+____
+1 - Você sabe algo sobre um relógio que foi roubado?
+[Thiago: Talvez eu saiba mas você terá de fazer uma tarefa para mim, quer mesmo assim?]
+1 - sim
+[Thiago: Então fale com o Bigas o bebum e peça a ele para que ele me pague e saia do meu bar fechado?]
+2 - não
+[Thiago: Então, não há nada que posso fazer.]
+Voltar para 1-THIAGO
+____
+1 - sim
+[Você vai até o Bigas e tenta falar com ele]
+[Bigas: ughh.. o que tu quer comigo? seu peba]
+1 - Vá pagar o que você deve ao thiago
+2 - Fala bigas eu te pago uma rodada e depois tu vai pra casa, pode ser?
+____
+1 - Vá pagar o que você deve ao thiago
+[bigas: quem tu pensa que é? pra tentar me obrigar a fazer algo]
+
+** Aqui o dialogo retorna para a anterior
+____
+2 - Fala bigas eu te pago uma rodada e depois tu vai pra casa, pode ser?
+
+[Bigas: se é você que vai pagar eu to dentro]
+[Bigas toma a cerveja que você pagou e acerta as contas com thiago e vai para casa]
+____
+[Ábacus: então Thiago o que você sabe sobre o relógio?]
+[Thiago: fiquei sabendo de um relogio que tentaram vender para a Juliana, fale com ela para mais detalhes, mas não sei se será facil conseguir as informações]
+[Ábacus: obrigado Thiago, nos vemos mais tarde]
+
+---------------------------
+[Ao sair do Bar você Ábacus se depara com Bitelo deitado no canto da calçada pedindo esmola. Dar esmola a Bitelo?]
+1 - Sim (Ele te agradece e te da uma carta que encontrou no chão)
+2 - Não (Você vai embora sem olhar para tras)
+
+1 - Se pegou a carta e nela esta escrito o seguinte:
+
+Se você está lendo esta carta, é porque tem interesse no relógio que recentemente caiu em minhas mãos. Deixe-me dizer que este não é um item comum. É uma peça de arte, uma raridade que certamente atrairá a atenção dos colecionadores mais refinados.
+
+Não posso revelar como o obtive, mas posso assegurar-lhe que está em perfeitas condições e pronto para mudar de mãos por um preço que reflete seu valor inestimável. Se você deseja vê-lo pessoalmente, estarei no lugar de sempre às 22h da noite. Venha sozinho e traga consigo o dinheiro necessário para concluir este negócio de forma rápida e discreta.
+
+Lembre-se, a discrição é fundamental. Este relógio tem uma história própria e precisa ser manuseado com cuidado. Estarei aguardando sua resposta.
+
+Assinado,
+O Intermediário
+
+1 - [Ábacus: Tenho que correr se quero recuperar o relógio do garoto]
+
+---------------------------
+[Para onde ir agora?]
+1 - Mansão (você ja visitou este lugar)
+2 - Bar (você ja visitou este lugar)
+3 - Boca,
+4 - Praça,
+5 - Biblioteca
+
+3 - Você se dirige a boca onde encontra alguns drogados por la e de algum jeito você se encontra com Juliana a dona da Boca e começa a conversar com ela
+
+[Ábacus: Thiago o dono do bar me disse que você sabe de algo sobre algum relógio?]
+[Juliana: talvez eu saiba de algo mas você terá que me ajudar antes, venha comigo encontrar alguem, você sera o meu guarda costas]
+
+3 - então Àbacus contata Jordão sobre o que esta acontecendo e então uma armadilha é preparada
+
+3 - passa um tempo e vocês se encontram com um cara num beco da na praça da cidade
+
+[Estranho: você nao sabe ler, a carta dizia para vir sozinha]
+[Juliana: eu não ando sem proteção]
+[Estranho: então tá, este é o relógio que mencionei]
+[Das sombras aparece Jordão e seus guardas encurralando o bandido] 
+[Àbacus se aproxima do bandido ja algemado]
+[BIGAS!!! por que fez isso?]
+[Bigas: ja falei com você no bar
+Preciso de dinheiro pra continuar com minha bebedeira]
+
+- Jordão sem mais nem menos pede para os guardas levarem Bigas para a prisão 
+
+[Jordão: muito obrigado Àbacus por achar o bandido que me roubou, aqui está como prometido o título de detetive oficial de Brilhantina e 10 mil euros para começar seu escritório]
